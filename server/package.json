@@ -1,0 +1,17 @@
+{
+  "name": "ai-mern",
+  "version": "1.0.0",
+  "description": "A MERN image generator project with integrated AI",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1" 
+  },
+  "author": "Rajagopal",
+  "license": "ISC",
+  "keywords": ["MERN", "AI", "image generator"], 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rajagopalrj001/Image-Generator-MERN-AI"
+  }
+}
