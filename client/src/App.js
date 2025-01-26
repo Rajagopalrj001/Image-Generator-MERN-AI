@@ -19,7 +19,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  diplay: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex:3;

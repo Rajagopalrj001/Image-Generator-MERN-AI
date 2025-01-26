@@ -1,17 +1,30 @@
 {
-  "name": "ai-mern",
+  "name": "server",
   "version": "1.0.0",
   "description": "A MERN image generator project with integrated AI",
   "main": "index.js",
+  "type" : "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1" 
+    "start": "nodemon index.js"
   },
   "author": "Rajagopal",
   "license": "ISC",
-  "keywords": ["MERN", "AI", "image generator"], 
+  "keywords": [
+    "MERN",
+    "AI",
+    "image generator"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Rajagopalrj001/Image-Generator-MERN-AI"
+  },
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "nodemon": "^3.1.9",
+    "openai": "^4.80.1"
   }
 }

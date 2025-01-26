@@ -1,82 +1,73 @@
-import { CircularProgress } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
-const Button = styled.div`
-  border-radius: 10px;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+const Container = styled.div`
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: min-content;
-  padding: 10px 24px;
-  @media (max-width: 600px) {
-    padding: 8px 12px;
-  }
-
-  ${({ type, theme }) =>
-    type === "secondary"
-      ? `
-  background: ${theme.secondary};
-  `
-      : `
-  background: ${theme.primary};
-`}
-
-  ${({ isDisabled }) =>
-    isDisabled &&
-    `
-  opacity: 0.4;
-  cursor: not-allowed;
-
-  `}
-  ${({ isLoading }) =>
-    isLoading &&
-    `
-    opacity: 0.8;
-  cursor: not-allowed;
-`}
-${({ flex }) =>
-    flex &&
-    `
-    flex: 1;
-`}
+  flex-direction: column;
+  gap: 4px;
 `;
 
-const button = ({
-  text,
-  isLoading,
-  isDisabled,
-  rightIcon,
-  leftIcon,
-  type,
-  onClick,
-  flex,
+const Label = styled.label`
+  font-size: 12px;
+  color: ${({ theme }) => theme.text_secondary};
+  padding: 0px 4px;
+  text-transform: uppercase;
+`;
+
+const OutlinedInput = styled.div`
+  border-radius: 8px;
+  border: 0.5px solid ${({ theme }) => theme.text_secondary + 70};
+  background-color: transparent;
+  color: ${({ theme }) => theme.text_secondary};
+  outline: none;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &:focus-within {
+    border-color: ${({ theme }) => theme.primary};
+  }
+`;
+
+const Input = styled.input`
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: ${({ theme }) => theme.text_secondary};
+  &:focus {
+    outline: none;
+  }
+`;
+
+const TextInput = ({
+  label,
+  placeholder,
+  name,
+  value,
+  handelChange,
+  textArea,
+  rows,
+  columns,
 }) => {
   return (
-    <Button
-      onClick={() => !isDisabled && !isLoading && onClick()}
-      isDisabled={isDisabled}
-      type={type}
-      isLoading={isLoading}
-      flex={flex}
-    >
-      {isLoading && (
-        <CircularProgress
-          style={{ width: "18px", height: "18px", color: "inherit" }}
+    <Container>
+      <Label>{label}</Label>
+      <OutlinedInput>
+        <Input
+          as={textArea ? "textarea" : "input"}
+          name={name}
+          rows={rows}
+          columns={columns}
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => handelChange(e)}
         />
-      )}
-      {leftIcon}
-      {text}
-      {isLoading && <> . . .</>}
-      {rightIcon}
-    </Button>
+      </OutlinedInput>
+    </Container>
   );
 };
 
-export default button;
+export default TextInput;
