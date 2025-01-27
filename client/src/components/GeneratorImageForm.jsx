@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import Button from './button';
 import TextInput from './TextInput' ;
 import CreateRounded from '@mui/icons-material/CreateRounded';
 import AutoAwesome from '@mui/icons-material/AutoAwesome';
-
+import {CreatePost,GenerateAIImage} from '../api/';
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -59,12 +60,32 @@ const GeneratorImageForm = (
   generateImageLoading ,
   setCreatePostLoading,}
 ) => {
-  const generateImageFun = () =>{
+  const navigation = useNavigate();
+  const [error,setError] = useState("");
+
+  const generateImageFun = async () =>{
     setGenerateImageLoading(true);
-  }
-  const createPostFun = () =>{
+    await GenerateAIImage({prompt: post.prompt}).then((res)=>{
+      setPost({...post, photo:`data:image/jpge;base64,${res?.data?.photo}`});
+      setGenerateImageLoading(false);
+    }).catch((error)=>{
+      setError(error?.response?.data?.message);
+      console.log(error);
+    })
+  };
+
+
+  const createPostFun = async () =>{
     setCreatePostLoading(true);
+    await CreatePost(post).then((res)=>{
+      setCreatePostLoading(false);
+      navigation("/")
+    }).catch((error)=>{
+      setError(error?.response?.data?.message);
+      console.log(error);
+    })
   }
+
   return (
     <Form>
       <Top>
@@ -88,6 +109,7 @@ const GeneratorImageForm = (
           value={post.prompt}
           handelChange = {(e) => setPost({...post,prompt:e.target.value})}
         />
+        {error && <div style={{color:"red"}}> {error} </div> }
 
       </Body>
       <Actions>
