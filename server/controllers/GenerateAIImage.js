@@ -39,6 +39,9 @@
 
 import axios from "axios";
 import {createError} from "../error.js";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 export const generateImage = async (req, res, next) => {
   try {
@@ -49,7 +52,7 @@ export const generateImage = async (req, res, next) => {
     }
 
     // Cloudflare API Endpoint and Configuration
-    const CLOUDFLARE_API_URL = `https://api.cloudflare.com/client/v4/accounts/3bc67ed694f3e27e7421452275e0623b/ai/run/@cf/black-forest-labs/flux-1-schnell`;
+    const CLOUDFLARE_API_URL = `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/black-forest-labs/flux-1-schnell`;
 
     const response = await axios.post(
       CLOUDFLARE_API_URL,
@@ -58,7 +61,7 @@ export const generateImage = async (req, res, next) => {
       },
       {
         headers: {
-          Authorization: `Bearer F2raT4mn7yOftzqwA9Taeoh4yOtq5edc3blyyB5_`,
+          Authorization: `Bearer ${process.env.CLOUDFLARE_API_KEY}`,
           "Content-Type": "application/json",
         },
       }
