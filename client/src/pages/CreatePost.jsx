@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import GeneratorImageForm from '../components/GeneratorImageForm' ;
 import GeneratedImageCard from '../components/GeneratedImageCard'
-import { Photo } from '@mui/icons-material';
+
 
 const Container = styled.div`
   height: 100%;

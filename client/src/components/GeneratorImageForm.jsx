@@ -66,8 +66,12 @@ const GeneratorImageForm = (
   const generateImageFun = async () =>{
     setGenerateImageLoading(true);
     await GenerateAIImage({prompt: post.prompt}).then((res)=>{
-      setPost({...post, photo:`data:image/jpge;base64,${res?.data?.photo}`});
+      const imageBase64 = res.data.photo.trim();
+      console.log("Image Data:", imageBase64);
+
+      setPost({...post, photo: imageBase64});
       setGenerateImageLoading(false);
+
     }).catch((error)=>{
       setError(error?.response?.data?.message);
       console.log(error);
@@ -127,7 +131,7 @@ const GeneratorImageForm = (
           type="secondary" 
           leftIcon={<CreateRounded/>} 
           isLoading = {createPostLoading}
-          isDisabled={post.name == "" || post.prompt ==="" || post.photo === ""}
+          isDisabled={post.name === "" || post.prompt ==="" || post.photo === ""}
           onClick={()=> createPostFun()}
         />
       </Actions>

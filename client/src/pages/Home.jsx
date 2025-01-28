@@ -73,6 +73,8 @@ const Home = () => {
   const [filteredPosts,setFilteredPosts] = useState([]);
 
 
+  console.log(posts);
+
   const getPosts = async ()=>{
     setLoading(true);
     await GetPosts().then((res)=>{
@@ -126,9 +128,9 @@ const Home = () => {
             <>{filteredPosts
               .slice()
               .reverse()
-              .map((item, index)=>{
-                <ImageCard key={index} item={item} />
-              })}
+              .map((item, index) => {
+                return <ImageCard key={index} item={item} />; // Make sure to return the JSX element
+              })}            
             </>
             : <>No Posts Found ! </> 
           }

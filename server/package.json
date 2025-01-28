@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A MERN image generator project with integrated AI",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -19,11 +19,13 @@
     "url": "https://github.com/Rajagopalrj001/Image-Generator-MERN-AI"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "cloudinary": "^2.5.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.9.5",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.9",
     "openai": "^3.1.0"
   }
