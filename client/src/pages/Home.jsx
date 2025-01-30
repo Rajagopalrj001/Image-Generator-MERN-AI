@@ -28,6 +28,7 @@ const Headline = styled.div`
   color: ${({theme}) => theme.text_primary};
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   @media (max-width: 600px) {
     font-size: 20px;
