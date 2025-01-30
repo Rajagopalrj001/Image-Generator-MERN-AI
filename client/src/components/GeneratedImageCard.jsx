@@ -4,8 +4,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 
 const Container = styled.div`
+  margin-top: 20px;
   flex: 1;
-  min-height:300px;
+  min-height:200px;
   display: flex;
   gap: 16px;
   flex-direction: column;

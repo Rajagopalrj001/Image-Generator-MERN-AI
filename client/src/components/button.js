@@ -25,7 +25,7 @@ const Button = styled.div`
   background: ${theme.secondary};
   `
       : `
-  background: ${theme.primary};
+  background: black;
 `}
 
   ${({ isDisabled }) =>

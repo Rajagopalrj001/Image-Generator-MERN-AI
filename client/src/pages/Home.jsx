@@ -10,14 +10,15 @@ const Container = styled.div`
   height: 100%;
   overflow-y: scroll;
   background: ${({ theme }) => theme.bg};
-  padding : 30px 30px;
+  padding : 120px 30px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   @media (max-width: 768px) {
-    padding: 6px 10px;
+    padding: 120px 10px;
+
   }
 `; 
 
@@ -34,9 +35,9 @@ const Headline = styled.div`
 `;
 
 const Span = styled.div`
-  font-size: 30p;
+  font-size: 25px;
   font-weight: 800;
-  color: ${({theme}) => theme.secondary};
+  color: ${({theme}) => theme.orange};
   @media (max-width: 600px) {
     font-size: 20px;
   }
@@ -64,6 +65,15 @@ const CardWrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 `;
+
+const Footer = styled.div`
+  font-size:14px;
+  width: 100%;
+  padding: 0;
+  color:lightGray;
+  text-align:center;
+`;
+
 
 const Home = () => {
   const [posts,setPosts] =useState([]);
@@ -114,8 +124,8 @@ const Home = () => {
   return (
     <Container>
       <Headline>
-        Explore popular posts in the Community!
-        <Span>⁌ Generated with AI ⁍</Span>
+        Your Imagination is the Only Limit
+        <Span>⁌ Generated with FLUX AI ⁍</Span>
       </Headline> 
       <SearchBar search={search} setSearch={setSearch}/>
       <Wrapper>
@@ -137,6 +147,8 @@ const Home = () => {
         </CardWrapper>
         )}
       </Wrapper>
+
+      <Footer> © 2024 rajagopalrj001. All rights reserved. </Footer>
     </Container>
   );
 }

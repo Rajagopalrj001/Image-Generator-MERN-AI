@@ -31,9 +31,8 @@ function App() {
       <Container>
         <Wrapper>
           <BrowserRouter>
-            <Navbar />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={ <> <Navbar /> <Home /> </>} />
               <Route path="/post" element={<CreatePost />} />
             </Routes>
           </BrowserRouter>

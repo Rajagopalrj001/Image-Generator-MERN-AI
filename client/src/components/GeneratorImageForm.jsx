@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Form = styled.div`
+  margin-top: 50px;
   flex:1;
   padding:16px 20px;
   display:flex;
@@ -17,6 +18,7 @@ const Form = styled.div`
   gap:9%;
   justify-content:center;
   padding-bottom: 50px;
+
 `;
 const Top = styled.div`
   display:flex;
@@ -118,7 +120,7 @@ const GeneratorImageForm = (
       </Body>
       <Actions>
         <Button 
-          text="Generate Image" 
+          text="Generate" 
           flex 
           leftIcon={<AutoAwesome/>}
           isLoading = {generateImageLoading}
@@ -126,7 +128,7 @@ const GeneratorImageForm = (
           onClick={()=>generateImageFun()}
         />
         <Button 
-          text="Post Image" 
+          text="Post" 
           flex 
           type="secondary" 
           leftIcon={<CreateRounded/>} 

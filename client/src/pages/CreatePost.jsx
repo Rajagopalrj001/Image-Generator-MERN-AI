@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import GeneratorImageForm from '../components/GeneratorImageForm' ;
 import GeneratedImageCard from '../components/GeneratedImageCard'
+import Button from "../components/button"
+import {ExploreRounded} from '@mui/icons-material';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -21,18 +24,20 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height:fit-content;
+  height: 100%;
   max-width: 1200px;
   gap: 8px;
   display: flex;
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-top: 240px;
   }
 `;
 
 
 const CreatePost = () => {
+  const navigate = useNavigate();
   const [generateImageLoading, setGenerateImageLoading] = useState(false);
   const [createPostLoading, setCreatePostLoading] = useState(false);
   const [post,setPost] = useState({
@@ -41,6 +46,21 @@ const CreatePost = () => {
     photo : "",
   });
   return (
+    <>
+    <button 
+      style={{
+        position: "absolute",
+        top: "10px",
+        left: "15px",
+        padding: "6px 8px",
+        textAlign:"center",
+        borderRadius:"100px",
+        border : "none",
+        fontSize:"14px"
+      }}
+      onClick={() => navigate('/')}
+    > &larr;
+    </button>
     <Container>
       <Wrapper>
         <GeneratorImageForm 
@@ -57,6 +77,7 @@ const CreatePost = () => {
         />
       </Wrapper>
     </Container>
+    </>
   )
 }
 
