@@ -39,7 +39,7 @@ const Image = styled.img`
         </> 
         : (
           <>
-            {src ?  <Image src={src}/> : <>Generated image will be displayed here !</>}
+            {src ?  <Image src={src}/> : <p style={{textAlign:"center"}}>Generated image will be displayed here !</p>}
           </>
         )
       }

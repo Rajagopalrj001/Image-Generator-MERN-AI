@@ -2,9 +2,7 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import GeneratorImageForm from '../components/GeneratorImageForm' ;
 import GeneratedImageCard from '../components/GeneratedImageCard'
-import Button from "../components/button"
-import {ExploreRounded, WineBarRounded} from '@mui/icons-material';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -41,8 +39,8 @@ const Wrapper = styled.div`
   }
 
    @media (max-width: 469px) {
-    margin-top: 450px;
-    margin-bottom: 160px;
+    margin-top: 430px;
+    margin-bottom: 140px;
   }
 
 `;
