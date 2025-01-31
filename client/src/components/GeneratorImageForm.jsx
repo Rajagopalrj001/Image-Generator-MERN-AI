@@ -101,8 +101,8 @@ const GeneratorImageForm = (
   return (
     <Form>
       <Top>
-        <Title>Generate Image with prompt</Title>
-        <Desc>Write your prompt according to image you want</Desc>
+        <Title>Transform Words into Art with prompt</Title>
+        <Desc>Create Magic Now!</Desc>
       </Top>
       <Body>
         <TextInput 
@@ -114,7 +114,7 @@ const GeneratorImageForm = (
         />
         <TextInput 
           label="Image Prompt" 
-          placeholder="Write a detailed prompt about the image . . ." 
+          placeholder="Describe the image you want to create... . . ." 
           name = "name"
           rows="8"
           textArea
@@ -126,7 +126,7 @@ const GeneratorImageForm = (
       </Body>
       <Actions>
         <Button 
-          text="Generate" 
+          text={ generateImageLoading ? "Generating" : "Generate" }
           flex 
           leftIcon={<AutoAwesome/>}
           isLoading = {generateImageLoading}
@@ -134,7 +134,7 @@ const GeneratorImageForm = (
           onClick={()=>generateImageFun()}
         />
         <Button 
-          text="Post" 
+          text={ createPostLoading ? "Posting" : "Post" }
           flex 
           type="secondary" 
           leftIcon={<CreateRounded/>} 

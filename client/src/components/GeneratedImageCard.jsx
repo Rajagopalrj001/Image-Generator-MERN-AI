@@ -39,7 +39,7 @@ const Image = styled.img`
         </> 
         : (
           <>
-            {src ?  <Image src={src}/> : <> write a prompt to generate a image</>}
+            {src ?  <Image src={src}/> : <>Generated image will be displayed here !</>}
           </>
         )
       }
