@@ -51,7 +51,6 @@ const Wrapper = styled.div`
 
 const Span = styled.div`
   display : inline;
-  font-size : 24px;
   font-weight: 800;
   color: ${({theme}) => theme.orange};
 `;
@@ -62,7 +61,7 @@ const Navbar = () => {
     
     <Container>
       <Wrapper>
-        <div>Imagix<Span>AI</Span></div>
+        <div style={{fontWeight:"800"}}>Pic<Span>Aura</Span></div>
           <Button 
           text="Generate" 
           rightIcon={
