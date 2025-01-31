@@ -23,24 +23,25 @@ const Container = styled.div`
 `; 
 
 const Headline = styled.div`
-  font-size: 34px;
-  font-weight: 500;
+  font-size: 36px;
+  font-weight: 700;
   color: ${({theme}) => theme.text_primary};
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
   @media (max-width: 600px) {
-    font-size: 20px;
+    font-size: 26px;
   }
 `;
 
 const Span = styled.div`
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 600;
   color: ${({theme}) => theme.orange};
   @media (max-width: 600px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
@@ -126,7 +127,7 @@ const Home = () => {
     <Container>
       <Headline>
         Your Imagination is the Only Limit
-        <Span>⁌ Generated with FLUX AI ⁍</Span>
+        <Span>⁌ Dream • Create • Inspire ⁍</Span>
       </Headline> 
       <SearchBar search={search} setSearch={setSearch}/>
       <Wrapper>

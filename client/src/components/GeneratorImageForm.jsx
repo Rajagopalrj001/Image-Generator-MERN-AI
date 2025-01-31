@@ -24,18 +24,25 @@ const Top = styled.div`
   display:flex;
   flex-direction:column;
   gap:6px;
+
 `;
 
 const Title = styled.div`
   font-size:28px;
   font-weight:500;
   color:${({theme})=> theme.text_primary}
+  @media (max-width: 600px) {
+    font-size:18px;
+  }
 `;
 
 const Desc = styled.div`
   font-size:17px;
   font-weight:400;
   color:${({theme})=> theme.text_secondary}
+  @media (max-width: 600px) {
+    font-size:12px;
+  }
 `;
 
 const Body = styled.div`
