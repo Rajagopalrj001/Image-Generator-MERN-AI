@@ -76,7 +76,6 @@ const GeneratorImageForm = (
     setGenerateImageLoading(true);
     await GenerateAIImage({prompt: post.prompt}).then((res)=>{
       const imageBase64 = res.data.photo.trim();
-      console.log("Image Data:", imageBase64);
 
       setPost({...post, photo: imageBase64});
       setGenerateImageLoading(false);

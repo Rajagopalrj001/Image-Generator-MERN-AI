@@ -85,8 +85,6 @@ const Home = () => {
   const [filteredPosts,setFilteredPosts] = useState([]);
 
 
-  console.log(posts);
-
   const getPosts = async ()=>{
     setLoading(true);
     await GetPosts().then((res)=>{
