@@ -48,9 +48,14 @@ const HoverOverlay = styled.div`
 `;
 
 const Prompt = styled.div`
-  font-weigth: 400px;
-  font-size:15px;
-  color:${({theme}) => theme.white};
+  font-weight: 300;
+  font-size: 14px;
+  color: ${({ theme }) => theme.white};
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Author = styled.div`

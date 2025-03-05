@@ -32,7 +32,12 @@ function App() {
         <Wrapper>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={ <> <Navbar /> <Home /> </>} />
+              <Route path="/" element={ 
+                <> 
+                  <Navbar />
+                  <Home /> 
+                </>
+              } />
               <Route path="/post" element={<CreatePost />} />
             </Routes>
           </BrowserRouter>
